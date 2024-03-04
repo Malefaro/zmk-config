@@ -25,6 +25,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
+        ht_bl: holdtap_balanced {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+            tapping-term-ms = <200>;
+            label = "HOLDTAP_BALANCED";
+            flavor = "balanced";
+        };
     };
 };
 
@@ -71,7 +79,7 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-&mt LGUI TAB  &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I       &kp O      &kp P     &bspc_del
+&ht_bl LGUI TAB  &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I       &kp O      &kp P     &bspc_del
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
     &kp LCTRL   &kp A      &kp S      &kp D      &kp F      &kp G          &kp H      &kp J      &kp K       &kp L      &kp SEMI   &kp SQT
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
@@ -79,7 +87,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                               &mo NUM      &mo SYM    &mt LALT SPACE     &lt EXT RET   &kp LBKT      &kp RBKT
+                               &mo NUM      &mo SYM   &ht_bl LALT SPACE     &lt EXT RET   &kp LBKT      &kp RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
