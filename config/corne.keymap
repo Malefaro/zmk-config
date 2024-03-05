@@ -13,6 +13,11 @@
 #define SYM 2
 #define EXT 3
 #define SYS 4
+#define TEST 5
+
+#define HMR(K1,K2,K3,K4) &ht_bl LGUI K1    &ht_bl LALT K2   &ht_bl LCTRL K3   &ht_bl LSHFT K4
+#define RHMR(K1,K2,K3,K4) &ht_bl LSHFT K1    &ht_bl LCTRL K2   &ht_bl LALT K3   &ht_bl LGUI K4
+
 
 #define BTS(num) &bt BT_SEL num
 
@@ -134,13 +139,30 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
  &bt BT_CLR      &kp F1     &kp F2     &kp F3      &kp F4    &kp F5         &kp F6     &kp F7      &kp F8     &kp F9     &kp F10    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-      &trans   &trans      &SPL       &trans      &SPR      &trans         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans      &trans
+     &tog TEST   &trans      &SPL       &trans      &SPR      &trans         &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
       &trans    BTS(0)      BTS(1)     BTS(2)    BTS(3)     BTS(4)          &trans    &trans     &trans     &trans      &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
                                &trans      &trans         &trans           &trans         &trans       &trans
+//                         |             |             |             | | |             |             |             |
+//                         '---------------------------------------------------------------------------------------'
+                        >;
+                };
+                test_layer {
+                        bindings = <
+// .---------------------------------------------------------------------------------------------------------------------------------------.
+// |          |          |          |          |          |          | | |          |          |          |          |          |          |
+&ht_bl LGUI TAB  &kp Q     &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I       &kp O      &kp P     &bspc_del
+// |          |          |          |          |          |          | | |          |          |          |          |          |          |
+    &kp LCTRL   HMR(A,       S,         D,          F)      &kp G          &kp H      RHMR(J,      K,          L,         SEMI)   &kp SQT
+// |          |          |          |          |          |          | | |          |          |          |          |          |          |
+    &kp LSHFT   &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA   &kp DOT   &kp FSLH    &kp LSHFT
+// |          |          |          |          |          |          | | |          |          |          |          |          |          |
+// '---------------------------------------------------------------------------------------------------------------------------------------'
+//                         |             |             |             | | |             |             |             |
+                               &mo NUM      &mo SYM   &ht_bl LALT SPACE     &lt EXT RET   &kp LBKT      &kp RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
