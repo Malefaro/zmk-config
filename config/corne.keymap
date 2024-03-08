@@ -43,6 +43,14 @@
             label = "HOLDTAP_BALANCED";
             flavor = "balanced";
         };
+        ht_bl_mo: holdtap_balanced_mo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            tapping-term-ms = <200>;
+            label = "HOLDTAP_BALANCED for mo";
+            flavor = "balanced";
+        };
         lh_hm: left_positional_home_row {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -157,7 +165,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                     &ltc    NUM ESC  &ltc SYM TAB   &ht_bl EXT SPACE     &mt LSHFT RET   &kp LBKT      &kp RBKT
+                     &ltc    NUM ESC  &ltc SYM TAB   &ht_bl_mo EXT SPACE   &mt LSHFT RET   &kp LBKT      &kp RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
