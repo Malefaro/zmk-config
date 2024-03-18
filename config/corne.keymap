@@ -146,7 +146,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
         &none   LHMR(A,       S,        D,          F)      &kp G          &kp H      RHMR(J,       K,         L,         SEMI)   &none
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-    &none   &mt LSHFT z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA   &kp DOT &mt LSHFT FSLH    &none
+    &none   &mt LSHFT Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA   &kp DOT &mt LSHFT FSLH    &none
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
