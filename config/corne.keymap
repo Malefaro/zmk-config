@@ -59,7 +59,7 @@
             flavor = "balanced";
             tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <130>;
+            require-prior-idle-ms = <115>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <RHK>;    // <---[[right-hand keys]]
             hold-trigger-on-release;
@@ -70,7 +70,7 @@
             flavor = "balanced";
             tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <130>;
+            require-prior-idle-ms = <115>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LHK>;    // <---[[left-hand keys]]
             hold-trigger-on-release;
@@ -146,7 +146,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
         &none   LHMR(A,       S,        D,          F)      &kp G          &kp H      RHMR(J,       K,         L,         SEMI)   &none
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-    &none       &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA   &kp DOT   &kp FSLH    &none
+    &none   &mt LSHFT z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA   &kp DOT &mt LSHFT FSLH    &none
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
@@ -181,7 +181,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
       &trans   &trans     &kp LPAR   &kp UNDER   &kp RPAR   &kp PLUS       &kp PIPE  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp COLON  &kp GRAVE
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-&kp LG(SPACE)   &trans     &kp LT    &kp MINUS     &kp GT    &trans         &trans    &kp EXCL   &kp AT     &kp HASH    &trans    &trans
+&kp LG(SPACE)   &trans     &kp LT    &kp MINUS     &kp GT    &trans         &trans    &kp EXCL   &kp AT     &kp HASH    &kp QMARK    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
