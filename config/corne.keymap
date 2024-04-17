@@ -37,14 +37,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_RSFT)>;
         };
-        ht_bl: holdtap_balanced {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-            tapping-term-ms = <TAPPING_TERM>;
-            label = "HOLDTAP_BALANCED";
-            flavor = "balanced";
-        };
         bmo: holdtap_balanced_mo {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -53,17 +45,6 @@
             quick-tap-ms = <200>;
             label = "HOLDTAP_BALANCED for mo";
             flavor = "balanced";
-        };
-        extl: ext_layer_positional_mo {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <110>;
-            bindings = <&mo>, <&kp>;
-            hold-trigger-key-positions = <37 38>;// left thumb cluster will work as hold-preferred
-            // hold-trigger-on-release; disable hold-trigger-on-release so that trigger key above will work as hold-preferred
         };
         lh_hm: left_positional_home_row {
             compatible = "zmk,behavior-hold-tap";
@@ -167,7 +148,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                         &ltc NUM LBKT  &ltc SYM TAB   &mt LSHFT ESC     &mt RSHFT RET &extl NAV SPACE   &ltc EXT RBKT
+                         &ltc NUM LBKT  &ltc SYM TAB   &mt LSHFT ESC     &mt RSHFT RET &bmo NAV SPACE   &ltc EXT RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
