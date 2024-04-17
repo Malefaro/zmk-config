@@ -198,7 +198,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
       &trans   &trans     &kp LPAR   &kp UNDER   &kp RPAR   &kp PLUS       &kp PIPE  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp COLON  &kp GRAVE
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-       &trans  &LG(SPACE)   &kp LT    &kp MINUS     &kp GT    &trans         &trans    &kp EXCL   &kp AT     &kp HASH    &kp QMARK    &trans
+       &trans &kp LG(SPACE)  &kp LT    &kp MINUS     &kp GT    &trans         &trans    &kp EXCL   &kp AT     &kp HASH    &kp QMARK    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
