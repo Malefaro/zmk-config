@@ -216,7 +216,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
      &trans    &trans      &trans       &trans      &trans  &trans         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-      &trans     &trans    &trans     &trans     &trans   &trans          &kp PG_DOWN   &trans     &trans    &trans     &trans    &trans
+      &trans     &trans    &trans     &trans     &trans   &trans          &kp PG_DN   &trans     &trans    &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
