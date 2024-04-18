@@ -76,6 +76,15 @@
             quick-tap-ms = <200>;
             bindings = <&mo>, <&kp>;
         };
+        sht: space_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <TAPPING_TERM>;
+            require-prior-idle-ms = <140>;
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 };
 
@@ -105,15 +114,16 @@
     };
 };
 
+#define VERT_COMBO(NAME,KEYS,RESULT) NAME {\
+    timeout-ms = <25>;\
+    key-positions = <KEYS>;\
+    bindings = <RESULT>;\
+}
+
 #define COMBOS_TIMEOUT 25
 / {
     combos {
         compatible = "zmk,combos";
-        combo_ESC {
-            timeout-ms = <COMBOS_TIMEOUT>;
-            key-positions = <19 20>;
-            bindings = <&kp ESC>;
-        };
         combo_BACKSPACE {
             timeout-ms = <COMBOS_TIMEOUT>;
             key-positions = <7 8>;
@@ -129,6 +139,16 @@
             key-positions = <15 16>;
             bindings = <&mo NAV>;
         };
+        VERT_COMBO(combo_1,1 13,&kp N1);
+        VERT_COMBO(combo_2,2 14,&kp N2);
+        VERT_COMBO(combo_3,3 15,&kp N3);
+        VERT_COMBO(combo_4,4 16,&kp N4);
+        VERT_COMBO(combo_5,5 17,&kp N5);
+        VERT_COMBO(combo_6,6 18,&kp N6);
+        VERT_COMBO(combo_7,7 19,&kp N7);
+        VERT_COMBO(combo_8,8 20,&kp N8);
+        VERT_COMBO(combo_9,9 21,&kp N9);
+        VERT_COMBO(combo_0,10 22,&kp N0);
     };
 };
 
@@ -148,7 +168,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                         &ltc NUM LBKT  &ltc SYM TAB   &mt LSHFT ESC     &mt RSHFT RET &bmo NAV SPACE   &ltc EXT RBKT
+                         &ltc NUM LBKT  &ltc SYM TAB   &mt LSHFT ESC     &mt RSHFT RET &sht NAV SPACE   &ltc EXT RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
