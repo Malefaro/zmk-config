@@ -114,8 +114,14 @@
     };
 };
 
+
 #define VERT_COMBO(NAME,KEYS,RESULT) NAME {\
-    timeout-ms = <25>;\
+    timeout-ms = <35>;\
+    key-positions = <KEYS>;\
+    bindings = <RESULT>;\
+}
+#define HORIZONTAL_COMBO(NAME,KEYS,RESULT) NAME {\
+    timeout-ms = <20>;\
     key-positions = <KEYS>;\
     bindings = <RESULT>;\
 }
@@ -134,11 +140,6 @@
             key-positions = <8 9>;
             bindings = <&kp DELETE>;
         };
-        combo_NAV_LAYER {
-            timeout-ms = <COMBOS_TIMEOUT>;
-            key-positions = <15 16>;
-            bindings = <&mo NAV>;
-        };
         VERT_COMBO(combo_1,1 13,&kp N1);
         VERT_COMBO(combo_2,2 14,&kp N2);
         VERT_COMBO(combo_3,3 15,&kp N3);
@@ -149,6 +150,37 @@
         VERT_COMBO(combo_8,8 20,&kp N8);
         VERT_COMBO(combo_9,9 21,&kp N9);
         VERT_COMBO(combo_0,10 22,&kp N0);
+
+//        VERT_COMBO(combo_EXCL,13 25,&kp EXCL);
+//        VERT_COMBO(combo_AT,14 26,&kp AT);
+//        VERT_COMBO(combo_HASH,15 27,&kp HASH);
+//        VERT_COMBO(combo_DOLLAR,16 28,&kp DOLLAR);
+//        VERT_COMBO(combo_PRCNT,17 29,&kp PRCNT);
+//        VERT_COMBO(combo_CARET,18 30,&kp CARET);
+//        VERT_COMBO(combo_AMPS,19 31,&kp AMPS);
+//        VERT_COMBO(combo_STAR,20 32,&kp STAR);
+//        VERT_COMBO(combo_TILDE,21 33,&kp TILDE);
+
+
+        HORIZONTAL_COMBO(combo_LBRC,2 3,&kp LBRC);
+        HORIZONTAL_COMBO(combo_RBRC,3 4,&kp RBRC);
+        HORIZONTAL_COMBO(combo_EQ,4 5,&kp EQUAL);
+
+        HORIZONTAL_COMBO(combo_LPAR,14 15,&kp LPAR);
+        HORIZONTAL_COMBO(combo_LPAR,15 16,&kp RPAR);
+        HORIZONTAL_COMBO(combo_UNDER,16 17,&kp UNDER);
+
+        HORIZONTAL_COMBO(combo_LT,26 27,&kp LT);
+        HORIZONTAL_COMBO(combo_GT,27 28,&kp GT);
+        HORIZONTAL_COMBO(combo_MINUS,28 29,&kp MINUS);
+
+        HORIZONTAL_COMBO(combo_BSLH,6 7,&kp BSLH);
+        HORIZONTAL_COMBO(combo_PIPE,18 19,&kp PIPE);
+        HORIZONTAL_COMBO(combo_PLUS,30 31,&kp PLUS);
+
+        HORIZONTAL_COMBO(combo_GRAVE,1 2,&kp GRAVE);
+        HORIZONTAL_COMBO(combo_SQT,9 10,&kp SQT);
+        HORIZONTAL_COMBO(combo_DQT,21 22,&kp DQT);
     };
 };
 
