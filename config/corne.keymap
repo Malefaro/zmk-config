@@ -167,7 +167,7 @@
         HORIZONTAL_COMBO(combo_EQ,4 5,&kp EQUAL);
 
         HORIZONTAL_COMBO(combo_LPAR,14 15,&kp LPAR);
-        HORIZONTAL_COMBO(combo_LPAR,15 16,&kp RPAR);
+        HORIZONTAL_COMBO(combo_RPAR,15 16,&kp RPAR);
         HORIZONTAL_COMBO(combo_UNDER,16 17,&kp UNDER);
 
         HORIZONTAL_COMBO(combo_LT,26 27,&kp LT);
