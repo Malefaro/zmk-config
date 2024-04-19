@@ -114,73 +114,70 @@
     };
 };
 
-
-#define VERT_COMBO(NAME,KEYS,RESULT) NAME {\
-    timeout-ms = <35>;\
-    key-positions = <KEYS>;\
-    bindings = <RESULT>;\
-}
-#define HORIZONTAL_COMBO(NAME,KEYS,RESULT) NAME {\
-    timeout-ms = <20>;\
+#define COMBOS_TIMEOUT_SHORT 20
+#define COMBOS_TIMEOUT_MEDIUM 32
+#define COMBOS_TIMEOUT_LONG 45
+#define MK_COMBO(NAME,KEYS,RESULT,TIMEOUT) NAME {\
+    timeout-ms = <TIMEOUT>;\
     key-positions = <KEYS>;\
     bindings = <RESULT>;\
 }
 
-#define COMBOS_TIMEOUT 25
 / {
     combos {
         compatible = "zmk,combos";
         combo_BACKSPACE {
-            timeout-ms = <COMBOS_TIMEOUT>;
+            timeout-ms = <COMBOS_TIMEOUT_MEDIUM>;
             key-positions = <7 8>;
             bindings = <&kp BACKSPACE>;
         };
         combo_DEL {
-            timeout-ms = <COMBOS_TIMEOUT>;
+            timeout-ms = <COMBOS_TIMEOUT_SHORT>;
             key-positions = <8 9>;
             bindings = <&kp DELETE>;
         };
-        VERT_COMBO(combo_1,1 13,&kp N1);
-        VERT_COMBO(combo_2,2 14,&kp N2);
-        VERT_COMBO(combo_3,3 15,&kp N3);
-        VERT_COMBO(combo_4,4 16,&kp N4);
-        VERT_COMBO(combo_5,5 17,&kp N5);
-        VERT_COMBO(combo_6,6 18,&kp N6);
-        VERT_COMBO(combo_7,7 19,&kp N7);
-        VERT_COMBO(combo_8,8 20,&kp N8);
-        VERT_COMBO(combo_9,9 21,&kp N9);
-        VERT_COMBO(combo_0,10 22,&kp N0);
 
-//        VERT_COMBO(combo_EXCL,13 25,&kp EXCL);
-//        VERT_COMBO(combo_AT,14 26,&kp AT);
-//        VERT_COMBO(combo_HASH,15 27,&kp HASH);
-//        VERT_COMBO(combo_DOLLAR,16 28,&kp DOLLAR);
-//        VERT_COMBO(combo_PRCNT,17 29,&kp PRCNT);
-//        VERT_COMBO(combo_CARET,18 30,&kp CARET);
-//        VERT_COMBO(combo_AMPS,19 31,&kp AMPS);
-//        VERT_COMBO(combo_STAR,20 32,&kp STAR);
-//        VERT_COMBO(combo_TILDE,21 33,&kp TILDE);
+        MK_COMBO(combo_1,1 13,&kp N1, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_2,2 14,&kp N2, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_3,3 15,&kp N3, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_4,4 16,&kp N4, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_5,5 17,&kp N5, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_6,6 18,&kp N6, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_7,7 19,&kp N7, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_8,8 20,&kp N8, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_9,9 21,&kp N9, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_0,10 22,&kp N0, COMBOS_TIMEOUT_LONG);
+
+        MK_COMBO(combo_EXCL,13 25,&kp EXCL, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_AT,14 26,&kp AT, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_HASH,15 27,&kp HASH, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_DOLLAR,16 28,&kp DOLLAR, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_PRCNT,17 29,&kp PRCNT, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_CARET,18 30,&kp CARET, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_AMPS,19 31,&kp AMPS, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_STAR,20 32,&kp STAR, COMBOS_TIMEOUT_LONG);
+        MK_COMBO(combo_TILDE,21 33,&kp TILDE, COMBOS_TIMEOUT_LONG);
 
 
-        HORIZONTAL_COMBO(combo_LBRC,2 3,&kp LBRC);
-        HORIZONTAL_COMBO(combo_RBRC,3 4,&kp RBRC);
-        HORIZONTAL_COMBO(combo_EQ,4 5,&kp EQUAL);
+        MK_COMBO(combo_LBRC,2 3,&kp LBRC, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_RBRC,3 4,&kp RBRC, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_EQ,4 5,&kp EQUAL, COMBOS_TIMEOUT_MEDIUM);
 
-        HORIZONTAL_COMBO(combo_LPAR,14 15,&kp LPAR);
-        HORIZONTAL_COMBO(combo_RPAR,15 16,&kp RPAR);
-        HORIZONTAL_COMBO(combo_UNDER,16 17,&kp UNDER);
+        MK_COMBO(combo_LPAR,14 15,&kp LPAR, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_RPAR,15 16,&kp RPAR, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_UNDER,16 17,&kp UNDER, COMBOS_TIMEOUT_MEDIUM);
 
-        HORIZONTAL_COMBO(combo_LT,26 27,&kp LT);
-        HORIZONTAL_COMBO(combo_GT,27 28,&kp GT);
-        HORIZONTAL_COMBO(combo_MINUS,28 29,&kp MINUS);
+        MK_COMBO(combo_LT,26 27,&kp LT, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_GT,27 28,&kp GT, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_MINUS,28 29,&kp MINUS, COMBOS_TIMEOUT_MEDIUM);
 
-        HORIZONTAL_COMBO(combo_BSLH,6 7,&kp BSLH);
-        HORIZONTAL_COMBO(combo_PIPE,18 19,&kp PIPE);
-        HORIZONTAL_COMBO(combo_PLUS,30 31,&kp PLUS);
+        MK_COMBO(combo_BSLH,6 7,&kp BSLH, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_PIPE,18 19,&kp PIPE, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_PLUS,30 31,&kp PLUS, COMBOS_TIMEOUT_MEDIUM);
 
-        HORIZONTAL_COMBO(combo_GRAVE,1 2,&kp GRAVE);
-        HORIZONTAL_COMBO(combo_SQT,9 10,&kp SQT);
-        HORIZONTAL_COMBO(combo_DQT,21 22,&kp DQT);
+        MK_COMBO(combo_GRAVE,1 2,&kp GRAVE, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_SQT,9 10,&kp SQT, COMBOS_TIMEOUT_MEDIUM);
+        MK_COMBO(combo_DQT,21 22,&kp DQT, COMBOS_TIMEOUT_MEDIUM);
     };
 };
 
