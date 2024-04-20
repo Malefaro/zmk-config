@@ -92,7 +92,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <200>;
-            bindings = <&mo>, <&num_dance>;
+            bindings = <&mo>, <&num_word>;
         };
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
