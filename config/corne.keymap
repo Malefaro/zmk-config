@@ -118,6 +118,7 @@
 
 #define NEXT_DESKTOP &kp LG(LC(RIGHT))
 #define PREV_DESKTOP &kp LG(LC(LEFT))
+#define SMART_NUM_SYM &smart_num SYM 0
 
 #define COMBOS_TIMEOUT_SHORT 20
 #define COMBOS_TIMEOUT_MEDIUM 25
@@ -159,7 +160,8 @@
         MK_COMBO(combo_LBKT,27 28,&kp LBKT, 33); // х
         MK_COMBO(combo_RBKT,31 32,&kp RBKT, 33); // ъ
         MK_COMBO(combo_ESC,19 20,&kp ESC, 25);
-        MK_COMBO(combo_TAB,15 16,&kp TAB, 25);
+        //MK_COMBO(combo_TAB,15 16,&kp TAB, 25);
+        MK_COMBO(combo_ENTER,15 16,&kp ENTER, 25);
     };
 };
 
@@ -179,7 +181,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                         &ltc NUM LBKT  &smart_num SYM 0  &smart_shift    &mt LSHFT RET &sht NAV SPACE   &ltc EXT RBKT
+                              &kp LBKT  &mt LSHFT TAB  &sht NAV SPACE     SMART_NUM_SYM  &smart_shift    &kp RBKT
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -214,7 +216,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                               &trans      &trans         &trans          &kp GRAVE      &kp DQT       &kp SQT
+                               &kp SQT      &kp DQT       &kp GRAVE           &trans      &trans         &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -228,11 +230,11 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
      &trans    &trans    PREV_DESKTOP  &trans  NEXT_DESKTOP &trans         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-      &trans     &trans    &kp C_PREV  &kp C_PP   &kp C_NEXT   &trans        BTS(0)      BTS(1)     BTS(2)    BTS(3)    &trans    &trans
+      &trans  &kp LG(SPACE)    &kp C_PREV  &kp C_PP   &kp C_NEXT   &trans        BTS(0)      BTS(1)     BTS(2)    BTS(3)    &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                               &trans     &kp K_CANCEL         &trans         &bt BT_CLR       &trans      &trans
+                              &trans      &bt BT_CLR         &trans       &kp K_CANCEL       &trans      &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
