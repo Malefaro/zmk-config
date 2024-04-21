@@ -156,7 +156,7 @@
         MK_COMBO(combo_0,10 22,&kp N0, COMBOS_TIMEOUT_LONG);
 
         MK_COMBO(combo_GRAVE,1 2,&kp GRAVE, 35); // ё
-        MK_COMBO(combo_SQT,21 22,&kp SQT, 33); // э
+        MK_COMBO(combo_SQT,20 21,&kp SQT, 30); // э
         MK_COMBO(combo_LBKT,27 28,&kp LBKT, 33); // х
         MK_COMBO(combo_RBKT,31 32,&kp RBKT, 33); // ъ
         MK_COMBO(combo_ESC,19 20,&kp ESC, 25);
