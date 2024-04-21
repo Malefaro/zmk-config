@@ -113,6 +113,9 @@
     layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
+&sk {  // sticky-key config
+    quick-release; // no double capitalization when rolling keys
+};
 
 
 
@@ -216,7 +219,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                               &kp SQT      &kp DQT       &kp GRAVE           &trans      &trans         &trans
+                               &kp SQT      &kp DQT       &trans           &trans      &trans         &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
