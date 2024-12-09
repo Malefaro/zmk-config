@@ -90,7 +90,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <230>;
-            bindings = <&num_word>, <&sl NUM>;
+            bindings = <&num_word NUM>, <&sl NUM>;
         };
         smart_num: smart_num { // num-word on tap, &mo on hold, sl on double tap
             compatible = "zmk,behavior-hold-tap";
