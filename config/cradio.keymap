@@ -44,7 +44,6 @@
             bindings = <&mo>, <&kp>;
             tapping-term-ms = <TAPPING_TERM>;
             quick-tap-ms = <200>;
-            label = "HOLDTAP_BALANCED for mo";
             flavor = "balanced";
         };
         lh_hm: left_positional_home_row {
