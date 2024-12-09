@@ -1,16 +1,48 @@
+# manifest:
+#   remotes:
+#     - name: zmkfirmware
+#       url-base: https://github.com/zmkfirmware
+#     # Additional modules containing boards/shields/custom code can be listed here as well
+#     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+#     - name: urob
+#       url-base: https://github.com/urob
+#   projects:
+#     - name: zmk
+#       # remote: zmkfirmware
+#       remote: urob
+#       revision: main
+#       import: app/west.yml
+#   self:
+#     path: config
+
 manifest:
+  defaults:
+    remote: urob
+    revision: v0.1
+
   remotes:
-    - name: zmkfirmware
+    - name: upstream
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: urob
       url-base: https://github.com/urob
+
   projects:
+    - name: zmk-auto-layer
+      path: modules/auto-layer
+    - name: zmk-helpers
+      path: modules/helpers
+    - name: zmk-leader-key
+      path: modules/leader-key
+    - name: zmk-tri-state
+      path: modules/tri-state
+
+    # ZMK with Zephyr namespaced under /zmk. This requires that ZMK imports
+    # Zephyr with a path other than `zephyr` (as in `going-modular`).
     - name: zmk
-      # remote: zmkfirmware
-      remote: urob
-      revision: main
-      import: app/west.yml
+      path: .
+      import:
+        file: app/west.yml
+        path-prefix: zmk
+
   self:
     path: config
