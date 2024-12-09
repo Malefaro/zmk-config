@@ -111,7 +111,7 @@
 };
 
 &num_word {  // num-word, requires PR #1451( used urob fork )
-    layers = <NUM>;
+    // layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
 };
 &sk {  // sticky-key config
