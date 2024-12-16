@@ -16,9 +16,9 @@
 #define EXT 4
 
 // left hand keys with thumb cluster
-#define LHK 0 1 2 3 4  5     12 13 14 15 16 17    24 25 26 27 28 29    36 37 38   39 40 41
+#define LHK 0 1 2 3 4    10 11 12 13 14  20 21 22 23 24   30 31   32 33
 // right hand keys with thum cluster
-#define RHK 6 7 8 9 10 11    18 19 20 21 22 23    30 31 32 33 34 35    39 40 41   38 37 36
+#define RHK 5 6 7 8 9    15 16 17 18 19  25 26 27 28 29   30 31   32 33
 
 #define LHMR(K1,K2,K3,K4) &lh_hm LGUI K1    &lh_hm LALT K2   &lh_hm LCTRL K3   &lh_hm LSHFT K4
 #define RHMR(K1,K2,K3,K4) &rh_hm LSHFT K1    &rh_hm LCTRL K2   &rh_hm LALT K3   &rh_hm LGUI K4
