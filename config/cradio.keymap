@@ -197,7 +197,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &kp COMMA   &kp N7      &kp N8     &kp N9    &kp EQUAL        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-              LHMR(N0,        N4,          N5       N6 )      &kp PLUS        &trans     &trans     &trans     &trans    &trans
+              LHMR(N0,        N4,          N5,       N6 )      &kp PLUS        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &kp DOT      &kp N1      &kp N2    &kp N3    &kp MINUS        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
