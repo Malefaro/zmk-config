@@ -23,6 +23,8 @@
 #define LHMR(K1,K2,K3,K4) &lh_hm LGUI K1    &lh_hm LALT K2   &lh_hm LCTRL K3   &lh_hm LSHFT K4
 #define RHMR(K1,K2,K3,K4) &rh_hm LSHFT K1    &rh_hm LCTRL K2   &rh_hm LALT K3   &rh_hm LGUI K4
 
+#define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
+#define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
 
 #define BTS(num) &bt BT_SEL num
@@ -103,7 +105,7 @@
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&sk RCTRL>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
     };
@@ -111,7 +113,7 @@
 
 &num_word {  // num-word, requires PR #1451( used urob fork )
     // layers = <NUM>;
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL SPACE>;
 };
 &sk {  // sticky-key config
     quick-release; // no double capitalization when rolling keys
@@ -184,7 +186,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                        &mt LSHFT TAB  &sht NAV SPACE     SMART_NUM_SYM  &smart_shift    
+                                        &mt LSHFT TAB  &sht NAV SPACE     SMART_NUM_SYM  &smart_shift
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -193,15 +195,15 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-                &trans     &trans      &trans   &trans      &trans         &kp COMMA   &kp N7   &kp N8     &kp N9    &kp MINUS    
+              &kp COMMA   &kp N7      &kp N8     &kp N9    &kp EQUAL        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-              &trans     &trans       &trans    &trans      &trans         &kp DOT   &kp N4    &kp N5     &kp N6      &kp PLUS    
+              LHMR(N0,        N4,          N5       N6 )      &kp PLUS        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-              &trans     &trans        &trans   &trans      &trans         &kp N0      &kp N1      &kp N2    &kp N3    &trans   
+              &kp DOT      &kp N1      &kp N2    &kp N3    &kp MINUS        &trans     &trans     &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                              &trans         &trans           &trans         &trans        
+                                              &trans         &trans           &trans         &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -215,11 +217,11 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &trans     &kp LPAR   &kp UNDER   &kp RPAR   &kp PLUS       &kp PIPE  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp COLON  
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-             &kp LG(SPACE)  &kp LT    &kp MINUS     &kp GT    &trans         &trans    &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
+             &kp LA(SPACE)  &kp LT    &kp MINUS     &kp GT    &trans      &bootloader  &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                            &kp DQT       &trans           &trans      &bootloader         
+                                            &kp DQT     &lt EXT SPACE           &trans      &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -229,15 +231,16 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-                &kp N1    &kp N2      &kp N3     &kp N4     &kp N5        &kp N6      &kp N7     &kp N8     &kp N9     &kp N0      
+           &kp RC(RG(Q))  &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_UP     &trans     NAV_BSPC    &trans     NAV_DEL  &kp RC(RG(SPACE))
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-              &trans    PREV_DESKTOP  &trans  NEXT_DESKTOP &trans         &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans      
+                         /*RC for mac*/
+               &trans  &kp RC(LS(TAB)) &trans  &kp RC(TAB) &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-             &kp LG(SPACE) &kp C_PREV  &kp C_PP &kp C_NEXT  &bootloader     BTS(0)      BTS(1)     BTS(2)    BTS(3)    &trans    
+             &kp LA(SPACE)  &trans   &kp LC(C)   &kp LC(V)  &bootloader    &trans       &trans      &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                           &bt BT_CLR         &trans       &kp K_CANCEL       &trans      
+                                           &trans         &trans          &lt EXT ENTER  &kp K_CANCEL
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
@@ -247,15 +250,15 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-               &trans  &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_VOL_UP    &trans    &trans     &trans     &trans      &trans      
+               &trans        &kp F7     &kp F8     &kp F9   &kp F12         &trans    &trans     &trans     &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-              &trans    PREV_DESKTOP  &trans  NEXT_DESKTOP &kp C_MUTE  &trans     &trans   &trans     &trans      &trans      
+              &trans       &kp F4      &kp F5     &kp F6    &kp F11         &trans     &trans    &trans     &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-                &trans    &trans     &trans     &trans   &kp C_VOL_DN      BTS(0)      BTS(1)     BTS(2)    BTS(3)     &trans    
+                &trans     &kp F1     &kp F2     &kp F3     &kp F10        BTS(0)      BTS(1)     BTS(2)    BTS(3)   &bt BT_CLR
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                         &kp BACKSPACE    &kp DELETE        &trans         &bt BT_CLR    
+                                             &trans         &trans           &trans         &trans
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
