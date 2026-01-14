@@ -105,8 +105,16 @@
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&sk RCTRL>, <&caps_word>;
+            bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
+        };
+        tshm: tap_sticky_hold_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>; /* Важно: параметров два */
+            flavor = "hold-preferred"; /* Удержание имеет приоритет */
+            tapping-term-ms = <TAPPING_TERM>;   /* Время, после которого нажатие считается удержанием */
+            quick-tap-ms = <200>;      /* (Опционально) Для более отзывчивого тапа */
+            bindings = <&kp>, <&sk>;   /* Удержание: обычный keypress, тап: sticky-key */
         };
     };
 };
@@ -186,7 +194,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
-                                        &mt LSHFT TAB  &sht NAV SPACE     SMART_NUM_SYM  &smart_shift
+                                        &mt LSHFT TAB  &sht NAV SPACE     SMART_NUM_SYM  &tshm LSHFT RCTRL
 //                         |             |             |             | | |             |             |             |
 //                         '---------------------------------------------------------------------------------------'
                         >;
