@@ -244,7 +244,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &trans     &kp LPAR   &kp UNDER   &kp RPAR   &kp PLUS       &kp PIPE  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp COLON  
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-               &alt_space &kp LT    &kp MINUS     &kp GT    &trans      &bootloader  &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
+               &trans      &kp LT    &kp MINUS     &kp GT    &trans      &bootloader  &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
@@ -263,7 +263,7 @@
                          /*RC for mac*/
                &trans  &kp RC(LS(TAB)) &trans  &kp RC(TAB) &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-             &kp LA(SPACE)  &trans   &kp LC(C)   &kp LC(V)  &bootloader    &trans       &trans      &trans     &trans    &trans
+                &alt_space  &trans   &kp LC(C)   &kp LC(V)  &bootloader    &trans       &trans      &trans     &trans    &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
