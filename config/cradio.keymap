@@ -119,24 +119,6 @@
     };
 };
 
-
-// workaround for macos issue with switching input source
-/ {
-  macros {
-    alt_space: alt_space {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      wait-ms = <15>;
-      tap-ms  = <30>;
-      bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp SPACE>
-        , <&macro_release &kp LALT>
-        ;
-    };
-  };
-};
-
 &num_word {  // num-word, requires PR #1451( used urob fork )
     // layers = <NUM>;
     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL SPACE>;
@@ -243,7 +225,7 @@
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &trans     &kp LPAR   &kp UNDER   &kp RPAR   &kp PLUS       &kp PIPE  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp COLON  
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-               &alt_space &kp LT    &kp MINUS     &kp GT    &trans      &bootloader  &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
+             &kp LA(SPACE)  &kp LT    &kp MINUS     &kp GT    &trans      &bootloader  &kp EXCL   &kp AT     &kp HASH  &kp QMARK    
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
 // '---------------------------------------------------------------------------------------------------------------------------------------'
 //                         |             |             |             | | |             |             |             |
@@ -257,7 +239,7 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-                 &trans  &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_UP     &trans     NAV_BSPC    &trans     NAV_DEL  &kp RC(RG(SPACE))
+           &kp RC(RG(Q))  &kp C_PREV  &kp C_PP &kp C_NEXT &kp C_VOL_UP     &trans     NAV_BSPC    &trans     NAV_DEL  &kp RC(RG(SPACE))
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
                          /*RC for mac*/
                &trans  &kp RC(LS(TAB)) &trans  &kp RC(TAB) &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &trans
@@ -276,7 +258,7 @@
                         bindings = <
 // .---------------------------------------------------------------------------------------------------------------------------------------.
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
-           &kp RC(RG(Q))   &kp F7     &kp F8     &kp F9   &kp F12         &trans    &trans     &trans     &trans      &trans
+               &trans        &kp F7     &kp F8     &kp F9   &kp F12         &trans    &trans     &trans     &trans      &trans
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
               &trans       &kp F4      &kp F5     &kp F6    &kp F11         &trans    RHMR(DOWN,    UP,       RIGHT,    SEMI)
 // |          |          |          |          |          |          | | |          |          |          |          |          |          |
